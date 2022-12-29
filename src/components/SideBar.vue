@@ -1,16 +1,16 @@
 <template>
     <v-navigation-drawer class="deep-purple accent-4" dark permanent>
         <v-list>
-            <v-list-item v-for="item in items" :key="item.title" link>
-                <RouterLink :to="item.url">
+            <v-list-item @click="OnLocation" v-for="item in items" :key="item.title" link>
+                
                     <v-list-item-icon>
                         <v-icon>{{ item.icon }}</v-icon>
                     </v-list-item-icon>
 
                     <v-list-item-content>
-                        <v-list-item-title>{{ item.title }}</v-list-item-title>
+                        <v-list-item-title style="display: inline;">{{ item.title }}</v-list-item-title>
                     </v-list-item-content>
-                </RouterLink>
+                
             </v-list-item>
         </v-list>
 
@@ -26,14 +26,8 @@
 </template>
 
 <script>
-
-import { RouterLink } from 'vue-router';
-
 export default {
     name: "SideBar",
-    components: {
-        RouterLink
-    },
     data() {
         return {
             items: [
@@ -42,5 +36,12 @@ export default {
             ],
         }
     },
+    methods: {
+        OnLocation() {
+            //:to="item.url"
+            console.log("Routing !");
+            this.$router.push("/about")
+        }
+    }
 }
 </script>
