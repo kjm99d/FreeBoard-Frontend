@@ -6,8 +6,10 @@ export default createStore({
   getters: {
   },
   mutations: {
+    // sync
   },
   actions: {
+    // Async
   },
   modules: {
   }

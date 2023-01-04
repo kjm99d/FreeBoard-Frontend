@@ -4,7 +4,7 @@
 
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to the Vuetify 3 Beta
+          Welcome to the Vussetify 3 Beta
         </h1>
 
           <h4>Vite Preview</h4>
@@ -86,10 +86,11 @@
 </template>
 
 <script>
-import logo from '../assets/logo.svg'
+import logo from '../../assets/logo.svg'
+import axios from 'axios'
 
 export default {
-  name: 'HelloWorld',
+  name: 'HelloWorld',  
 
   data: () => ({
     ecosystem: [
@@ -140,5 +141,12 @@ export default {
       },
     ],
   }),
+  created() {
+    console.log("Component Created ! ");
+
+    axios.get("https://api.ip.pe.kr/", (res) => {
+      console.log(res.data);
+    })
+  }
 }
 </script>

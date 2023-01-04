@@ -2,6 +2,7 @@
   <v-app>
     <SideBar/>
 
+    <!-- View를 그린다 -->
     <v-main>
       <v-row class="text-center">
         <v-col cols="12">

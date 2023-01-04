@@ -1,7 +1,7 @@
 <template>
     <v-navigation-drawer class="deep-purple accent-4" dark permanent>
         <v-list>
-            <v-list-item @click="OnLocation" v-for="item in items" :key="item.title" link>
+            <v-list-item :to="item.url" v-for="item in items" :key="item.title" link>
                 
                     <v-list-item-icon>
                         <v-icon>{{ item.icon }}</v-icon>
@@ -37,9 +37,8 @@ export default {
         }
     },
     methods: {
-        OnLocation() {
+        OnLocation(event) {
             //:to="item.url"
-            console.log("Routing !");
             this.$router.push("/about")
         }
     }
